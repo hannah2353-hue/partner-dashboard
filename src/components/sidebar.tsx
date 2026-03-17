@@ -29,7 +29,7 @@ export function Sidebar() {
           <span className="text-white text-xs font-bold">P</span>
         </div>
         <span className="font-heading text-lg font-bold tracking-tight text-foreground">
-          제휴 파트너
+          제휴 파트너 한눈에
         </span>
       </div>
 

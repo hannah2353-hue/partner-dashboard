@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "제휴 파트너 - 통합관리 대시보드",
+  title: "제휴 파트너 한눈에",
   description: "제휴채널 통합관리 시스템 v2",
 };
 
