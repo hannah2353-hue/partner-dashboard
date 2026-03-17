@@ -1,5 +1,6 @@
 import { getStats, getChannels, getAlertLevel } from "@/lib/data";
 import { DashboardClient } from "@/components/dashboard-client";
+import { getAllArticlesFlat } from "@/lib/news-data";
 
 export default function DashboardPage() {
   const stats = getStats();
@@ -17,6 +18,16 @@ export default function DashboardPage() {
       return a.channel.contract.remaining_days - b.channel.contract.remaining_days;
     });
 
+  // Get top news highlights (prioritize RISK and REGULATORY)
+  const allNews = getAllArticlesFlat();
+  const newsHighlights = allNews.slice(0, 5).map((a) => ({
+    category: a.category,
+    title: a.title,
+    date: a.date,
+    serviceName: a.service_name,
+    url: a.url,
+  }));
+
   return (
     <DashboardClient
       stats={stats}
@@ -30,6 +41,7 @@ export default function DashboardPage() {
         products: a.channel.products,
       }))}
       generatedAt={stats.generatedAt}
+      newsHighlights={newsHighlights}
     />
   );
 }

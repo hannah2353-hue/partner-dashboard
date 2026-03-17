@@ -1,6 +1,7 @@
 import { getChannels, getChannelByCode, getAlertLevel } from "@/lib/data";
 import { ChannelDetailClient } from "@/components/channel-detail-client";
 import { notFound } from "next/navigation";
+import { getChannelNews } from "@/lib/news-data";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -23,6 +24,7 @@ export default async function ChannelDetailPage({ params }: PageProps) {
   }
 
   const alertLevel = getAlertLevel(channel);
+  const channelNews = getChannelNews(decodedCode);
 
   return (
     <ChannelDetailClient
@@ -38,6 +40,7 @@ export default async function ChannelDetailPage({ params }: PageProps) {
         alert_level: alertLevel,
         updated_at: channel.updated_at,
       }}
+      classifiedNews={channelNews}
     />
   );
 }

@@ -25,6 +25,14 @@ interface AlertChannel {
   products: Product[];
 }
 
+interface NewsHighlight {
+  category: string;
+  title: string;
+  date: string;
+  serviceName: string;
+  url: string;
+}
+
 interface DashboardClientProps {
   stats: {
     totalChannels: number;
@@ -35,12 +43,22 @@ interface DashboardClientProps {
   };
   alertChannels: AlertChannel[];
   generatedAt: string;
+  newsHighlights?: NewsHighlight[];
 }
+
+const CATEGORY_COLORS: Record<string, { bg: string; border: string; label: string }> = {
+  RISK: { bg: "bg-news-risk", border: "border-l-news-risk", label: "리스크" },
+  REGULATORY: { bg: "bg-news-regulatory", border: "border-l-news-regulatory", label: "규제" },
+  MANAGEMENT: { bg: "bg-news-management", border: "border-l-news-management", label: "경영변동" },
+  GROWTH: { bg: "bg-news-growth", border: "border-l-news-growth", label: "사업확장" },
+  COMPETITION: { bg: "bg-news-competition", border: "border-l-news-competition", label: "제휴경쟁" },
+};
 
 export function DashboardClient({
   stats,
   alertChannels,
   generatedAt,
+  newsHighlights = [],
 }: DashboardClientProps) {
   const formattedTime = new Date(generatedAt).toLocaleString("ko-KR", {
     year: "numeric",
@@ -230,15 +248,47 @@ export function DashboardClient({
               </CardTitle>
             </CardHeader>
             <CardContent className="px-4 pb-4">
-              <div className="flex flex-col items-center justify-center py-8 text-center">
-                <Newspaper size={32} className="text-gray-300 mb-3" />
-                <p className="text-sm text-muted-custom">
-                  뉴스 데이터가 없습니다
-                </p>
-                <p className="text-xs text-muted-custom mt-1">
-                  뉴스 모니터링 실행 후 표시됩니다
-                </p>
-              </div>
+              {newsHighlights.length > 0 ? (
+                <div className="space-y-2">
+                  {newsHighlights.map((news, i) => {
+                    const catInfo = CATEGORY_COLORS[news.category] ?? CATEGORY_COLORS.COMPETITION;
+                    return (
+                      <a
+                        key={i}
+                        href={news.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block border-l-3 ${catInfo.border} rounded-r-md p-2.5 hover:bg-gray-50 transition-colors`}
+                      >
+                        <div className="flex items-center gap-1.5 mb-0.5">
+                          <Badge variant="outline" className="text-[9px] px-1 py-0">
+                            {catInfo.label}
+                          </Badge>
+                          <span className="text-[10px] text-muted-custom">
+                            {news.serviceName}
+                          </span>
+                          <span className="text-[10px] text-muted-custom ml-auto">
+                            {news.date}
+                          </span>
+                        </div>
+                        <p className="text-xs font-medium text-foreground line-clamp-1">
+                          {news.title}
+                        </p>
+                      </a>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="flex flex-col items-center justify-center py-8 text-center">
+                  <Newspaper size={32} className="text-gray-300 mb-3" />
+                  <p className="text-sm text-muted-custom">
+                    뉴스 데이터가 없습니다
+                  </p>
+                  <p className="text-xs text-muted-custom mt-1">
+                    뉴스 모니터링 실행 후 표시됩니다
+                  </p>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>

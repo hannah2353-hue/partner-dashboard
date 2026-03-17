@@ -1,5 +1,15 @@
 import rawData from "@/data/integrated.json";
 import { IntegratedData, Channel } from "./types";
+import { getNewsStats } from "./news-data";
+
+function getNewsCountFromCache(): number {
+  try {
+    const stats = getNewsStats();
+    return stats.total;
+  } catch {
+    return 0;
+  }
+}
 
 export function getData(): IntegratedData {
   return rawData as unknown as IntegratedData;
@@ -74,7 +84,7 @@ export function getStats() {
     validContracts,
     criticalCount,
     warningCount,
-    newsCount: 0, // News is null for now
+    newsCount: getNewsCountFromCache(),
     generatedAt: data.generated_at,
   };
 }

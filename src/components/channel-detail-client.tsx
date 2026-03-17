@@ -19,6 +19,7 @@ import {
   Newspaper,
 } from "lucide-react";
 import type { Contract, Product, Alert, NewsItem } from "@/lib/types";
+import type { ClassifiedArticle } from "@/lib/gemini";
 
 interface ChannelDetailData {
   channel_code: string;
@@ -35,9 +36,18 @@ interface ChannelDetailData {
 
 interface Props {
   channel: ChannelDetailData;
+  classifiedNews?: ClassifiedArticle[];
 }
 
-export function ChannelDetailClient({ channel: ch }: Props) {
+const NEWS_CATEGORY_COLORS: Record<string, { bg: string; border: string; label: string }> = {
+  RISK: { bg: "bg-news-risk", border: "border-l-news-risk", label: "리스크" },
+  REGULATORY: { bg: "bg-news-regulatory", border: "border-l-news-regulatory", label: "규제" },
+  MANAGEMENT: { bg: "bg-news-management", border: "border-l-news-management", label: "경영변동" },
+  GROWTH: { bg: "bg-news-growth", border: "border-l-news-growth", label: "사업확장" },
+  COMPETITION: { bg: "bg-news-competition", border: "border-l-news-competition", label: "제휴경쟁" },
+};
+
+export function ChannelDetailClient({ channel: ch, classifiedNews = [] }: Props) {
   return (
     <div>
       {/* Breadcrumb */}
@@ -200,12 +210,47 @@ export function ChannelDetailClient({ channel: ch }: Props) {
               </CardTitle>
             </CardHeader>
             <CardContent className="px-4 pb-4">
-              <div className="flex flex-col items-center justify-center py-6 text-center">
-                <Newspaper size={28} className="text-gray-300 mb-2" />
-                <p className="text-sm text-muted-custom">
-                  뉴스 데이터 없음
-                </p>
-              </div>
+              {classifiedNews.length > 0 ? (
+                <div className="space-y-2">
+                  {classifiedNews.slice(0, 5).map((article, i) => {
+                    const catInfo = NEWS_CATEGORY_COLORS[article.category] ?? NEWS_CATEGORY_COLORS.COMPETITION;
+                    return (
+                      <a
+                        key={i}
+                        href={article.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block border-l-3 ${catInfo.border} rounded-r-md p-2.5 hover:bg-gray-50 transition-colors`}
+                      >
+                        <div className="flex items-center gap-1.5 mb-0.5">
+                          <Badge variant="outline" className="text-[9px] px-1 py-0">
+                            <span className={`w-1.5 h-1.5 rounded-full ${catInfo.bg} mr-1`} />
+                            {catInfo.label}
+                          </Badge>
+                          <span className="text-[10px] text-muted-custom ml-auto">
+                            {article.date}
+                          </span>
+                        </div>
+                        <p className="text-xs font-medium text-foreground line-clamp-2">
+                          {article.title}
+                        </p>
+                        {article.action_needed && (
+                          <p className="text-[10px] text-[#FF8C00] mt-1 font-medium">
+                            {article.action_needed}
+                          </p>
+                        )}
+                      </a>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="flex flex-col items-center justify-center py-6 text-center">
+                  <Newspaper size={28} className="text-gray-300 mb-2" />
+                  <p className="text-sm text-muted-custom">
+                    뉴스 데이터 없음
+                  </p>
+                </div>
+              )}
             </CardContent>
           </Card>
 
