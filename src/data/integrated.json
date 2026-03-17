@@ -1,0 +1,1938 @@
+{
+  "generated_at": "2026-03-17T09:00:00+09:00",
+  "reference_date": "2026-03-17",
+  "total_channels": 30,
+  "summary": {
+    "비교대출": 24,
+    "광고배너": 6
+  },
+  "channels": [
+    {
+      "channel_code": "제휴_농협은행",
+      "channel_type": "비교대출",
+      "company_name": "농협은행㈜",
+      "service_name": "NH농협",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2026-02-08",
+        "end_date": "2027-02-07",
+        "remaining_days": 327,
+        "auto_renewal": true,
+        "integration_type": "쿠콘연동",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "0.4%(VAT면세)",
+        "first_contract_date": "2024-02-08",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "0.4%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_NICE평가정보",
+      "channel_type": "비교대출",
+      "company_name": "NICE평가정보㈜",
+      "service_name": "NICE평가정보",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-01",
+        "end_date": "2026-10-31",
+        "remaining_days": 228,
+        "auto_renewal": false,
+        "integration_type": "전용회선",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2021-09-10",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_TOSS",
+      "channel_type": "비교대출",
+      "company_name": "㈜비바리퍼블리카",
+      "service_name": "TOSS",
+      "active_products": [
+        "신용대출",
+        "햇살론",
+        "대환대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2026-03-12",
+        "end_date": "2026-09-11",
+        "remaining_days": 178,
+        "auto_renewal": true,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "N",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2019-07-25",
+        "renewal_review": "X",
+        "memo": "- 대환수수료율 : 1.3%(VAT별도)"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-25",
+            "compliance_number": "제2025-180호",
+            "compliance_expiry": "2026-04-24",
+            "compliance_remaining_days": 38,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": true
+          }
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론",
+            "햇살론일반",
+            "근로자햇살론"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT포함"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-09",
+            "compliance_number": "제2026-013호",
+            "compliance_expiry": "2027-01-08",
+            "compliance_remaining_days": 297,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "대환대출",
+          "original_names": [
+            "대환"
+          ],
+          "commission": {
+            "rate": "1.3%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_네이버파이낸셜",
+      "channel_type": "비교대출",
+      "company_name": "네이버파이낸셜㈜",
+      "service_name": "네이버페이",
+      "active_products": [
+        "신용대출",
+        "햇살론",
+        "회생상품"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-08-26",
+        "end_date": "2026-08-25",
+        "remaining_days": 161,
+        "auto_renewal": true,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "N",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2022-08-26",
+        "renewal_review": "X",
+        "memo": "- 사업자 : 1.0%(VAT별도) / 대환 0.8&(VAT별도)"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-03-07",
+            "compliance_number": "제2025-118호",
+            "compliance_expiry": "2026-03-06",
+            "compliance_remaining_days": -11,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": true
+          }
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론",
+            "햇살론일반",
+            "근로자햇살론"
+          ],
+          "commission": {
+            "rate": "1.20%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-09",
+            "compliance_number": "제2026-013호",
+            "compliance_expiry": "2027-01-08",
+            "compliance_remaining_days": 297,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "회생상품",
+          "original_names": [
+            "성실상환OK론"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2025-12-03",
+            "compliance_number": "제2025-518호",
+            "compliance_expiry": "2026-12-02",
+            "compliance_remaining_days": 260,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [
+        {
+          "type": "REVIEW_EXPIRED",
+          "level": "EXPIRED",
+          "message": "[신용대출] 광고심의 만료 (11일 경과)",
+          "remaining_days": -11,
+          "target": "product:신용대출",
+          "product": "신용대출"
+        }
+      ],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_더핀",
+      "channel_type": "비교대출",
+      "company_name": "㈜에에피더핀",
+      "service_name": "더핀",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-07-28",
+        "end_date": "2026-07-27",
+        "remaining_days": 132,
+        "auto_renewal": false,
+        "integration_type": "NICE연동",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.5%(VAT별도)",
+        "first_contract_date": "2023-07-28",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.50%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_뱅크몰",
+      "channel_type": "비교대출",
+      "company_name": "뱅크몰",
+      "service_name": "뱅크몰",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2026-02-10",
+        "end_date": "2027-02-10",
+        "remaining_days": 330,
+        "auto_renewal": true,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.6%(VAT별도)",
+        "first_contract_date": "2022-02-09",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.60%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": null,
+            "condition": "철회건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-05-09",
+            "compliance_number": "제2025-202호",
+            "compliance_expiry": "2026-05-08",
+            "compliance_remaining_days": 52,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_뱅크샐러드",
+      "channel_type": "비교대출",
+      "company_name": "㈜뱅크샐러드",
+      "service_name": "뱅크샐러드",
+      "active_products": [
+        "신용대출",
+        "오토론",
+        "햇살론",
+        "회생상품"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-01",
+        "end_date": "2026-09-30",
+        "remaining_days": 197,
+        "auto_renewal": false,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2021-04-19",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        },
+        {
+          "product": "오토론",
+          "original_names": [
+            "오토"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2026-01-23",
+            "compliance_number": "제2026-037호",
+            "compliance_expiry": "2027-01-22",
+            "compliance_remaining_days": 311,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2026-01-23",
+            "compliance_number": "제2026-037호",
+            "compliance_expiry": "2027-01-22",
+            "compliance_remaining_days": 311,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "회생상품",
+          "original_names": [
+            "성실신용"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2026-01-23",
+            "compliance_number": "제2026-037호",
+            "compliance_expiry": "2027-01-22",
+            "compliance_remaining_days": 311,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_신한은행",
+      "channel_type": "비교대출",
+      "company_name": "㈜신한은행",
+      "service_name": "신한은행",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-05-30",
+        "end_date": "2026-05-29",
+        "remaining_days": 73,
+        "auto_renewal": true,
+        "integration_type": "쿠콘연동",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "0.5%(VAT면세)",
+        "first_contract_date": "2023-05-30",
+        "renewal_review": "X",
+        "memo": "- 예적금 동시 진행시 0.3%(VAT별도)"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "0.3%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_신한은행(사업자)",
+      "channel_type": "비교대출",
+      "company_name": "㈜신한은행",
+      "service_name": "신한은행",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-01",
+        "end_date": "2026-10-31",
+        "remaining_days": 228,
+        "auto_renewal": true,
+        "integration_type": "쿠콘연동",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "0.5%(VAT면세)",
+        "first_contract_date": "2024-11-01",
+        "renewal_review": "X",
+        "memo": "- 신한은행 사업자"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "0.5%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_신한카드",
+      "channel_type": "비교대출",
+      "company_name": "신한카드㈜",
+      "service_name": "신한카드",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-12-28",
+        "end_date": "2026-12-27",
+        "remaining_days": 285,
+        "auto_renewal": false,
+        "integration_type": "API",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2019-07-03",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_알다",
+      "channel_type": "비교대출",
+      "company_name": "KB핀테크(알다)",
+      "service_name": "알다",
+      "active_products": [
+        "신용대출",
+        "햇살론",
+        "오토론",
+        "회생상품"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-01",
+        "end_date": "2026-09-30",
+        "remaining_days": 197,
+        "auto_renewal": false,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2019-10-30",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론",
+            "햇살론일반"
+          ],
+          "commission": {
+            "rate": "1.20%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-09",
+            "compliance_number": "제2026-015호",
+            "compliance_expiry": "2027-01-08",
+            "compliance_remaining_days": 297,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "오토론",
+          "original_names": [
+            "내차담보플러스OK론",
+            "내차담보플러스"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2025-11-28",
+            "compliance_number": "제2025-513호",
+            "compliance_expiry": "2026-11-27",
+            "compliance_remaining_days": 255,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "회생상품",
+          "original_names": [
+            "성실상환OK론"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2025-11-28",
+            "compliance_number": "제2025-513호",
+            "compliance_expiry": "2026-11-27",
+            "compliance_remaining_days": 255,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_오버테이크",
+      "channel_type": "비교대출",
+      "company_name": "오버테이크㈜",
+      "service_name": "오버테이크",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-12-01",
+        "end_date": "2026-11-30",
+        "remaining_days": 258,
+        "auto_renewal": false,
+        "integration_type": "NICE연동",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2022-11-29",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_오케이캐피탈",
+      "channel_type": "비교대출",
+      "company_name": "오케이캐피탈㈜",
+      "service_name": "오케이캐피탈",
+      "active_products": [
+        "신용대출",
+        "햇살론"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-05-08",
+        "end_date": "2026-05-07",
+        "remaining_days": 51,
+        "auto_renewal": false,
+        "integration_type": "전용회선",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT면세)",
+        "first_contract_date": "2023-05-08",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完(~'24.06, 수수료 1.2% 적용)"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론",
+            "햇살론일반"
+          ],
+          "commission": {
+            "rate": "1.20%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-09",
+            "compliance_number": "제2026-014호",
+            "compliance_expiry": "2027-01-08",
+            "compliance_remaining_days": 297,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_카카오뱅크",
+      "channel_type": "비교대출",
+      "company_name": "카카오뱅크㈜",
+      "service_name": "카카오뱅크",
+      "active_products": [
+        "신용대출",
+        "햇살론",
+        "회생상품"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-05-19",
+        "end_date": "2026-05-18",
+        "remaining_days": 62,
+        "auto_renewal": true,
+        "integration_type": "API",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.6%(VAT면세)",
+        "first_contract_date": "2023-05-19",
+        "renewal_review": "X",
+        "memo": "- 카카오뱅크 대고객 서비스 전환 계약 / 모기지에서 관리"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.60%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-07-21",
+            "compliance_number": null,
+            "compliance_expiry": null,
+            "compliance_remaining_days": null,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론",
+            "햇살론일반",
+            "근로자햇살론"
+          ],
+          "commission": {
+            "rate": "1.30%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-09",
+            "compliance_number": "제2026-014호",
+            "compliance_expiry": "2027-01-08",
+            "compliance_remaining_days": 297,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "회생상품",
+          "original_names": [
+            "성실상환OK론"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2025-11-13",
+            "compliance_number": "제2025-483호",
+            "compliance_expiry": "2026-11-12",
+            "compliance_remaining_days": 240,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_카카오페이",
+      "channel_type": "비교대출",
+      "company_name": "㈜카카오페이",
+      "service_name": "카카오페이",
+      "active_products": [
+        "신용대출",
+        "햇살론",
+        "회생상품"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-09-24",
+        "end_date": "2026-09-23",
+        "remaining_days": 190,
+        "auto_renewal": true,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "N",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2020-07-10",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-25",
+            "compliance_number": "제2025-180호",
+            "compliance_expiry": "2026-04-24",
+            "compliance_remaining_days": 38,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": true
+          }
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론",
+            "햇살론일반"
+          ],
+          "commission": {
+            "rate": "1.65%",
+            "vat": "VAT포함"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-15",
+            "compliance_number": "제2026-027호",
+            "compliance_expiry": "2027-01-14",
+            "compliance_remaining_days": 303,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "회생상품",
+          "original_names": [
+            "성실상환OK론"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2025-11-13",
+            "compliance_number": "제2025-484호",
+            "compliance_expiry": "2026-11-12",
+            "compliance_remaining_days": 240,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_캐시노트",
+      "channel_type": "비교대출",
+      "company_name": "㈜한국신용데이터",
+      "service_name": "캐시노트",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-08-04",
+        "end_date": "2026-08-03",
+        "remaining_days": 139,
+        "auto_renewal": false,
+        "integration_type": "NICE연동",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.2%(VAT별도)",
+        "first_contract_date": "2023-08-04",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.20%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_케이뱅크",
+      "channel_type": "비교대출",
+      "company_name": "케이뱅크㈜",
+      "service_name": "케이뱅크",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12",
+        "remaining_days": 56,
+        "auto_renewal": true,
+        "integration_type": "전용회선",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.3%~1.5%(VAT면세)",
+        "first_contract_date": "2024-05-13",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "별도기준",
+            "vat": "VAT면세",
+            "기타": "대출금액에 따른 별도 수수료율 적용(VAT면세)"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_토스뱅크",
+      "channel_type": "비교대출",
+      "company_name": "토스뱅크㈜",
+      "service_name": "토스뱅크",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2026-01-01",
+        "end_date": "2026-12-31",
+        "remaining_days": 289,
+        "auto_renewal": true,
+        "integration_type": "API",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.73%(VAT면세)",
+        "first_contract_date": "2024-01-18",
+        "renewal_review": "X",
+        "memo": "- '2025-01-17 -> 2024.12.31 부속계약 통한 종료일자 변경"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.73%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_FINDA",
+      "channel_type": "비교대출",
+      "company_name": "㈜핀다",
+      "service_name": "핀다",
+      "active_products": [
+        "신용대출",
+        "햇살론"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-01",
+        "end_date": "2026-09-30",
+        "remaining_days": 197,
+        "auto_renewal": false,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2021-01-22",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        },
+        {
+          "product": "햇살론",
+          "original_names": [
+            "햇살론",
+            "햇살론일반"
+          ],
+          "commission": {
+            "rate": "1.00%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-09",
+            "compliance_number": "제2026-016호",
+            "compliance_expiry": "2027-01-08",
+            "compliance_remaining_days": 297,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "대출모집인",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_핀크",
+      "channel_type": "비교대출",
+      "company_name": "㈜핀크",
+      "service_name": "핀크",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-01",
+        "end_date": "2026-09-30",
+        "remaining_days": 197,
+        "auto_renewal": false,
+        "integration_type": "API",
+        "is_recruitment_corp": true,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.6%(VAT별도)",
+        "first_contract_date": "2019-10-25",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.60%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_하나카드",
+      "channel_type": "비교대출",
+      "company_name": "하나카드㈜",
+      "service_name": "하나카드",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-01",
+        "end_date": "2026-10-31",
+        "remaining_days": 228,
+        "auto_renewal": false,
+        "integration_type": "API",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.8%(VAT면세)",
+        "first_contract_date": "2021-10-22",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.80%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_한국이지론",
+      "channel_type": "비교대출",
+      "company_name": "서민금융진흥원",
+      "service_name": "한국이지론",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2026-02-01",
+        "end_date": "2027-01-31",
+        "remaining_days": 320,
+        "auto_renewal": true,
+        "integration_type": "전용회선",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "0.3~0.7%(VAT면세)",
+        "first_contract_date": null,
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "별도기준",
+            "vat": "VAT별도",
+            "기타": "대출금리에 따른 별도 수수료율 적용(VAT별도)"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_현대카드",
+      "channel_type": "비교대출",
+      "company_name": "㈜현대카드",
+      "service_name": "현대카드",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-04-22",
+        "end_date": "2026-04-21",
+        "remaining_days": 35,
+        "auto_renewal": true,
+        "integration_type": "전용회선",
+        "is_recruitment_corp": false,
+        "contract_exists": "N",
+        "commission_rate_avg": "2.0%(VAT면세)",
+        "first_contract_date": "2020-04-22",
+        "renewal_review": "O",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "2.00%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2025-04-30",
+            "compliance_number": "제2025-192호",
+            "compliance_expiry": "2026-04-29",
+            "compliance_remaining_days": 43,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": true
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "제휴_현대캐피탈",
+      "channel_type": "비교대출",
+      "company_name": "현대캐피탈㈜",
+      "service_name": "현대캐피탈",
+      "active_products": [
+        "신용대출",
+        "오토론"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-11-22",
+        "end_date": "2026-11-21",
+        "remaining_days": 249,
+        "auto_renewal": true,
+        "integration_type": "전용회선",
+        "is_recruitment_corp": false,
+        "contract_exists": "N",
+        "commission_rate_avg": "1.7%(VAT면세)",
+        "first_contract_date": "2018-11-22",
+        "renewal_review": "X",
+        "memo": "-LMS 부속합의서로 작성"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS",
+            "개인신용대출"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT면세"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외 + 접수후 5일이후 실행건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-02-11",
+            "compliance_number": "제2026-064호",
+            "compliance_expiry": "2027-02-10",
+            "compliance_remaining_days": 330,
+            "central_association_number": null,
+            "central_association_expiry": "2027-02-18",
+            "central_remaining_days": 338,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        },
+        {
+          "product": "오토론",
+          "original_names": [
+            "내차담보플러스OK론"
+          ],
+          "commission": null,
+          "settlement_exclusion": null,
+          "ad_review": {
+            "review_date": "2026-02-11",
+            "compliance_number": "제2026-064호",
+            "compliance_expiry": "2027-02-10",
+            "compliance_remaining_days": 330,
+            "central_association_number": null,
+            "central_association_expiry": "2027-02-18",
+            "central_remaining_days": 338,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "리브메이트",
+      "channel_type": "광고배너",
+      "company_name": "㈜KB국민카드",
+      "service_name": "KB국민카드",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-06-01",
+        "end_date": "2026-05-31",
+        "remaining_days": 75,
+        "auto_renewal": false,
+        "integration_type": "WEB",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "2.0%(VAT포함)",
+        "first_contract_date": "2019-06-03",
+        "renewal_review": "종료",
+        "memo": "26년 종료 예정"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS",
+            "OK한도우대론"
+          ],
+          "commission": {
+            "rate": "2.00%",
+            "vat": "VAT포함"
+          },
+          "settlement_exclusion": {
+            "days": null,
+            "condition": "미대상 채널"
+          },
+          "ad_review": {
+            "review_date": "2025-12-03",
+            "compliance_number": "제2025-520호",
+            "compliance_expiry": "2026-12-02",
+            "compliance_remaining_days": 260,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "모심",
+      "channel_type": "광고배너",
+      "company_name": "㈜모심",
+      "service_name": "모심",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2026-02-25",
+        "end_date": "2027-02-24",
+        "remaining_days": 344,
+        "auto_renewal": true,
+        "integration_type": "WEB",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "무료",
+        "first_contract_date": "2025-02-25",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS",
+            "OK한도우대론"
+          ],
+          "commission": {
+            "rate": "무료",
+            "vat": null
+          },
+          "settlement_exclusion": {
+            "days": null,
+            "condition": "미대상 채널"
+          },
+          "ad_review": {
+            "review_date": "2026-02-11",
+            "compliance_number": "제2026-063호",
+            "compliance_expiry": "2027-02-10",
+            "compliance_remaining_days": 330,
+            "central_association_number": null,
+            "central_association_expiry": "2026-03-11",
+            "central_remaining_days": -6,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "신한카드",
+      "channel_type": "광고배너",
+      "company_name": "신한카드㈜",
+      "service_name": "신한카드",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-07-03",
+        "end_date": "2026-07-02",
+        "remaining_days": 107,
+        "auto_renewal": true,
+        "integration_type": "WEB",
+        "is_recruitment_corp": false,
+        "contract_exists": "N",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2019-07-03",
+        "renewal_review": "X",
+        "memo": "- 수수료 인하 完"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS",
+            "OK한도우대론"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-07",
+            "compliance_number": "제2026-007호",
+            "compliance_expiry": "2027-01-06",
+            "compliance_remaining_days": 295,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "알다",
+      "channel_type": "광고배너",
+      "company_name": "KB핀테크(알다)",
+      "service_name": "알다",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-05-21",
+        "end_date": "2026-05-20",
+        "remaining_days": 64,
+        "auto_renewal": true,
+        "integration_type": "WEB",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.7%(VAT별도)",
+        "first_contract_date": "2025-05-21",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS"
+          ],
+          "commission": {
+            "rate": "1.70%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": null,
+            "condition": "미대상 채널"
+          },
+          "ad_review": null
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "우리카드",
+      "channel_type": "광고배너",
+      "company_name": "㈜우리카드",
+      "service_name": "우리카드",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-06-01",
+        "end_date": "2026-05-31",
+        "remaining_days": 75,
+        "auto_renewal": true,
+        "integration_type": "전용회선",
+        "is_recruitment_corp": false,
+        "contract_exists": "N",
+        "commission_rate_avg": "2.0%(VAT별도)",
+        "first_contract_date": "2020-06-01",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS",
+            "OK한도우대론"
+          ],
+          "commission": {
+            "rate": "2.00%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 14,
+            "condition": "철회건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-07",
+            "compliance_number": "제2026-007호",
+            "compliance_expiry": "2027-01-06",
+            "compliance_remaining_days": 295,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    },
+    {
+      "channel_code": "하나카드",
+      "channel_type": "광고배너",
+      "company_name": "하나카드㈜",
+      "service_name": "하나카드",
+      "active_products": [
+        "신용대출"
+      ],
+      "contract": {
+        "status": "유효",
+        "start_date": "2025-06-10",
+        "end_date": "2026-06-09",
+        "remaining_days": 84,
+        "auto_renewal": false,
+        "integration_type": "WEB",
+        "is_recruitment_corp": false,
+        "contract_exists": "Y",
+        "commission_rate_avg": "1.8%(VAT별도)",
+        "first_contract_date": "2021-06-10",
+        "renewal_review": "X",
+        "memo": "-"
+      },
+      "products": [
+        {
+          "product": "신용대출",
+          "original_names": [
+            "CPS",
+            "OK한도우대론"
+          ],
+          "commission": {
+            "rate": "1.80%",
+            "vat": "VAT별도"
+          },
+          "settlement_exclusion": {
+            "days": 30,
+            "condition": "완제(철회)건 제외"
+          },
+          "ad_review": {
+            "review_date": "2026-01-07",
+            "compliance_number": "제2026-007호",
+            "compliance_expiry": "2027-01-06",
+            "compliance_remaining_days": 295,
+            "central_association_number": null,
+            "central_association_expiry": null,
+            "central_remaining_days": null,
+            "advertiser": "저축은행",
+            "is_deleted": false
+          }
+        }
+      ],
+      "news": null,
+      "alerts": [],
+      "updated_at": "2026-03-17T09:00:00+09:00",
+      "updated_by": "init-pipeline"
+    }
+  ],
+  "unmatched": []
+}
