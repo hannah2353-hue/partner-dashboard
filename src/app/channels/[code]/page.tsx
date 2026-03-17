@@ -3,15 +3,11 @@ import { ChannelDetailClient } from "@/components/channel-detail-client";
 import { notFound } from "next/navigation";
 import { getChannelNews } from "@/lib/news-data";
 
+// Make this page dynamic so it always reads fresh data after edits
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ code: string }>;
-}
-
-export function generateStaticParams() {
-  const channels = getChannels();
-  return channels.map((ch) => ({
-    code: ch.channel_code,
-  }));
 }
 
 export default async function ChannelDetailPage({ params }: PageProps) {

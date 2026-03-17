@@ -1,10 +1,44 @@
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, FileSpreadsheet } from "lucide-react";
+import { Download, FileSpreadsheet, Loader2 } from "lucide-react";
 
 export default function ExportPage() {
+  const [loadingFull, setLoadingFull] = useState(false);
+  const [loadingAlerts, setLoadingAlerts] = useState(false);
+
+  async function handleDownload(type: "full" | "alerts") {
+    const setLoading = type === "full" ? setLoadingFull : setLoadingAlerts;
+    setLoading(true);
+
+    try {
+      const res = await fetch(`/api/export/excel?type=${type}`);
+      if (!res.ok) throw new Error("Download failed");
+
+      const blob = await res.blob();
+      const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+      const filename =
+        type === "full"
+          ? `제휴채널_통합현황_${today}.csv`
+          : `제휴채널_경고현황_${today}.csv`;
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Download error:", err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div>
       <div className="mb-6">
@@ -34,10 +68,15 @@ export default function ExportPage() {
                   variant="outline"
                   size="sm"
                   className="gap-1.5 border-border-custom"
-                  disabled
+                  disabled={loadingFull}
+                  onClick={() => handleDownload("full")}
                 >
-                  <Download size={14} />
-                  다운로드 (준비 중)
+                  {loadingFull ? (
+                    <Loader2 size={14} className="animate-spin" />
+                  ) : (
+                    <Download size={14} />
+                  )}
+                  {loadingFull ? "생성 중..." : "다운로드"}
                 </Button>
               </div>
             </div>
@@ -61,10 +100,15 @@ export default function ExportPage() {
                   variant="outline"
                   size="sm"
                   className="gap-1.5 border-border-custom"
-                  disabled
+                  disabled={loadingAlerts}
+                  onClick={() => handleDownload("alerts")}
                 >
-                  <Download size={14} />
-                  다운로드 (준비 중)
+                  {loadingAlerts ? (
+                    <Loader2 size={14} className="animate-spin" />
+                  ) : (
+                    <Download size={14} />
+                  )}
+                  {loadingAlerts ? "생성 중..." : "다운로드"}
                 </Button>
               </div>
             </div>

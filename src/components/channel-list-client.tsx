@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronDown, ChevronRight, Plus, Search } from "lucide-react";
+import { AddChannelModal } from "@/components/add-channel-modal";
 import type { Alert } from "@/lib/types";
 
 interface ProductRow {
@@ -53,6 +55,8 @@ export function ChannelListClient({
 }: ChannelListClientProps) {
   const [filter, setFilter] = useState<"전체" | "비교대출" | "광고배너">("전체");
   const [search, setSearch] = useState("");
+  const router = useRouter();
+  const [addModalOpen, setAddModalOpen] = useState(false);
   const [expandedRows, setExpandedRows] = useState<Set<string>>(() => {
     // Auto-expand CRITICAL rows
     const critical = new Set<string>();
@@ -100,7 +104,10 @@ export function ChannelListClient({
         <h1 className="text-2xl font-bold font-heading text-foreground">
           채널 목록
         </h1>
-        <Button className="bg-foreground text-white hover:bg-foreground/90 gap-1.5">
+        <Button
+          className="bg-foreground text-white hover:bg-foreground/90 gap-1.5"
+          onClick={() => setAddModalOpen(true)}
+        >
           <Plus size={16} />
           채널 추가
         </Button>
@@ -188,6 +195,12 @@ export function ChannelListClient({
           </TableBody>
         </Table>
       </div>
+
+      <AddChannelModal
+        open={addModalOpen}
+        onOpenChange={setAddModalOpen}
+        onSuccess={() => router.refresh()}
+      />
     </div>
   );
 }

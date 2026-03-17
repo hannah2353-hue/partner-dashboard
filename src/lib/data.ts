@@ -1,4 +1,5 @@
-import rawData from "@/data/integrated.json";
+import fs from "fs";
+import path from "path";
 import { IntegratedData, Channel } from "./types";
 import { getNewsStats } from "./news-data";
 
@@ -12,7 +13,9 @@ function getNewsCountFromCache(): number {
 }
 
 export function getData(): IntegratedData {
-  return rawData as unknown as IntegratedData;
+  const filePath = path.join(process.cwd(), "src/data/integrated.json");
+  const raw = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(raw) as IntegratedData;
 }
 
 export function getChannels(): Channel[] {
