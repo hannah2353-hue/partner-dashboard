@@ -301,16 +301,7 @@
         }
       ],
       "news": null,
-      "alerts": [
-        {
-          "type": "REVIEW_EXPIRED",
-          "level": "EXPIRED",
-          "message": "[신용대출] 광고심의 만료 (11일 경과)",
-          "remaining_days": -11,
-          "target": "product:신용대출",
-          "product": "신용대출"
-        }
-      ],
+      "alerts": [],
       "updated_at": "2026-03-17T09:00:00+09:00",
       "updated_by": "init-pipeline"
     },
