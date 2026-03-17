@@ -25,8 +25,8 @@ export function Sidebar() {
     <aside className="w-60 h-screen border-r border-border-custom bg-white flex flex-col fixed left-0 top-0 z-30">
       {/* Logo */}
       <div className="px-5 py-6 flex items-center gap-2.5">
-        <div className="w-7 h-7 bg-accent-red rounded-md flex items-center justify-center">
-          <span className="text-white text-xs font-bold">P</span>
+        <div className="w-8 h-7 bg-orange-500 rounded-md flex items-center justify-center">
+          <span className="text-white text-xs font-bold">OK</span>
         </div>
         <span className="font-heading text-lg font-bold tracking-tight text-foreground">
           제휴 파트너 한눈에
