@@ -154,12 +154,12 @@ export function DashboardClient({
               </p>
               <div className="flex gap-1.5">
                 {stats.criticalCount > 0 && (
-                  <Badge variant="destructive" className="text-[10px] px-1.5 py-0 bg-critical">
+                  <Badge className="text-[10px] px-1.5 py-0 border-0" style={{ backgroundColor: "#FF4444", color: "#FFFFFF" }}>
                     CRITICAL {stats.criticalCount}
                   </Badge>
                 )}
                 {stats.warningCount > 0 && (
-                  <Badge className="text-[10px] px-1.5 py-0 bg-warning text-foreground">
+                  <Badge className="text-[10px] px-1.5 py-0 border-0" style={{ backgroundColor: "#FFD700", color: "#0D0D0D" }}>
                     WARNING {stats.warningCount}
                   </Badge>
                 )}
@@ -213,11 +213,12 @@ export function DashboardClient({
                   >
                     <div className="flex items-center gap-3">
                       <Badge
-                        className={`text-[10px] px-1.5 py-0 font-semibold ${
+                        className="text-[10px] px-1.5 py-0 font-semibold border-0"
+                        style={
                           ch.level === "CRITICAL"
-                            ? "bg-critical text-white"
-                            : "bg-warning text-foreground"
-                        }`}
+                            ? { backgroundColor: "#FF4444", color: "#FFFFFF" }
+                            : { backgroundColor: "#FFD700", color: "#0D0D0D" }
+                        }
                       >
                         {ch.level}
                       </Badge>
