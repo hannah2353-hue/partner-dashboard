@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+import { adminDb } from "./firebase-admin";
 import { IntegratedData, Channel } from "./types";
 import { getNewsStats } from "./news-data";
 
@@ -12,20 +11,37 @@ function getNewsCountFromCache(): number {
   }
 }
 
-export function getData(): IntegratedData {
-  const filePath = path.join(process.cwd(), "src/data/integrated.json");
-  const raw = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(raw) as IntegratedData;
+export async function getData(): Promise<IntegratedData> {
+  const snapshot = await adminDb.collection("channels").get();
+  const channels: Channel[] = [];
+  for (const doc of snapshot.docs) {
+    channels.push(doc.data() as Channel);
+  }
+
+  const sorted = sortChannels(channels);
+
+  return {
+    generated_at: new Date().toISOString(),
+    reference_date: new Date().toISOString().slice(0, 10),
+    total_channels: sorted.length,
+    summary: {
+      비교대출: sorted.filter((c) => c.channel_type === "비교대출").length,
+      광고배너: sorted.filter((c) => c.channel_type === "광고배너").length,
+    },
+    channels: sorted,
+  };
 }
 
-export function getChannels(): Channel[] {
-  const data = getData();
-  return sortChannels(data.channels);
+export async function getChannels(): Promise<Channel[]> {
+  const data = await getData();
+  return data.channels;
 }
 
-export function getChannelByCode(code: string): Channel | undefined {
-  const data = getData();
-  return data.channels.find((c) => c.channel_code === code);
+export async function getChannelByCode(code: string): Promise<Channel | undefined> {
+  const docId = code.replace(/\//g, "_");
+  const doc = await adminDb.collection("channels").doc(docId).get();
+  if (!doc.exists) return undefined;
+  return doc.data() as Channel;
 }
 
 export function sortChannels(channels: Channel[]): Channel[] {
@@ -66,8 +82,8 @@ export function getAlertLevel(channel: Channel): "CRITICAL" | "WARNING" | null {
   return null;
 }
 
-export function getStats() {
-  const data = getData();
+export async function getStats() {
+  const data = await getData();
   const channels = data.channels;
 
   let criticalCount = 0;

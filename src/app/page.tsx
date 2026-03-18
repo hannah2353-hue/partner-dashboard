@@ -2,9 +2,11 @@ import { getStats, getChannels, getAlertLevel } from "@/lib/data";
 import { DashboardClient } from "@/components/dashboard-client";
 import { getAllArticlesFlat } from "@/lib/news-data";
 
-export default function DashboardPage() {
-  const stats = getStats();
-  const channels = getChannels();
+export const dynamic = "force-dynamic";
+
+export default async function DashboardPage() {
+  const stats = await getStats();
+  const channels = await getChannels();
 
   const alertChannels = channels
     .map((ch) => ({

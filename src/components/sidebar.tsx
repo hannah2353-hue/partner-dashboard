@@ -8,7 +8,9 @@ import {
   Newspaper,
   Clock,
   Download,
+  LogOut,
 } from "lucide-react";
+import { useAuth } from "@/lib/auth-context";
 
 const navItems = [
   { href: "/", label: "대시보드", icon: LayoutDashboard },
@@ -20,6 +22,7 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const { user, logout } = useAuth();
 
   return (
     <aside className="w-60 h-screen border-r border-border-custom bg-white flex flex-col fixed left-0 top-0 z-30">
@@ -62,9 +65,29 @@ export function Sidebar() {
         })}
       </nav>
 
-      {/* Footer */}
-      <div className="px-5 py-4 border-t border-border-custom">
-        <p className="text-xs text-muted-custom">v2.0 Local</p>
+      {/* User Info & Logout */}
+      <div className="px-4 py-4 border-t border-border-custom">
+        {user && (
+          <div className="flex items-center gap-2 mb-2">
+            {user.photoURL ? (
+              <img src={user.photoURL} alt="" className="w-7 h-7 rounded-full" />
+            ) : (
+              <div className="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center text-xs font-bold text-gray-500">
+                {(user.displayName || user.email || "U")[0]}
+              </div>
+            )}
+            <span className="text-xs text-gray-600 truncate flex-1">
+              {user.displayName || user.email}
+            </span>
+          </div>
+        )}
+        <button
+          onClick={logout}
+          className="flex items-center gap-2 text-xs text-muted-custom hover:text-gray-700 transition-colors w-full px-1"
+        >
+          <LogOut size={14} />
+          로그아웃
+        </button>
       </div>
     </aside>
   );

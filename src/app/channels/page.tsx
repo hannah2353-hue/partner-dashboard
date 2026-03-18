@@ -1,8 +1,10 @@
 import { getChannels, getAlertLevel } from "@/lib/data";
 import { ChannelListClient } from "@/components/channel-list-client";
 
-export default function ChannelsPage() {
-  const channels = getChannels();
+export const dynamic = "force-dynamic";
+
+export default async function ChannelsPage() {
+  const channels = await getChannels();
 
   const channelData = channels.map((ch) => ({
     channel_code: ch.channel_code,

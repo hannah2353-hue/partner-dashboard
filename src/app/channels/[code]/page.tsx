@@ -1,4 +1,4 @@
-import { getChannels, getChannelByCode, getAlertLevel } from "@/lib/data";
+import { getChannelByCode, getAlertLevel } from "@/lib/data";
 import { ChannelDetailClient } from "@/components/channel-detail-client";
 import { notFound } from "next/navigation";
 import { getChannelNews } from "@/lib/news-data";
@@ -13,7 +13,7 @@ interface PageProps {
 export default async function ChannelDetailPage({ params }: PageProps) {
   const { code } = await params;
   const decodedCode = decodeURIComponent(code);
-  const channel = getChannelByCode(decodedCode);
+  const channel = await getChannelByCode(decodedCode);
 
   if (!channel) {
     notFound();

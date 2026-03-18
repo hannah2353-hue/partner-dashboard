@@ -1,18 +1,20 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { adminDb } from "@/lib/firebase-admin";
 
-const AUDIT_LOG_PATH = path.join(process.cwd(), "src/data/audit-log.json");
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    if (!fs.existsSync(AUDIT_LOG_PATH)) {
-      return NextResponse.json([]);
-    }
-    const raw = fs.readFileSync(AUDIT_LOG_PATH, "utf-8");
-    const logs = JSON.parse(raw);
+    const snapshot = await adminDb
+      .collection("audit_log")
+      .orderBy("timestamp", "desc")
+      .limit(200)
+      .get();
+
+    const logs = snapshot.docs.map((doc) => doc.data());
     return NextResponse.json(logs);
-  } catch {
+  } catch (error) {
+    console.error("Audit log read error:", error);
     return NextResponse.json([]);
   }
 }

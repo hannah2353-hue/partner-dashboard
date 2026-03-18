@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import { Sidebar } from "@/components/sidebar";
+import { AuthProvider } from "@/lib/auth-context";
+import { LayoutShell } from "@/components/layout-shell";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
@@ -30,10 +31,9 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased bg-[#FAFAFA]`}
       >
-        <Sidebar />
-        <main className="ml-60 min-h-screen">
-          <div className="p-8">{children}</div>
-        </main>
+        <AuthProvider>
+          <LayoutShell>{children}</LayoutShell>
+        </AuthProvider>
       </body>
     </html>
   );
