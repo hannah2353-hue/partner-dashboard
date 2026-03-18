@@ -68,9 +68,7 @@
       "company_name": "NICE평가정보㈜",
       "service_name": "NICE평가정보",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -101,44 +99,6 @@
             "days": 30,
             "condition": "완제(철회)건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-459호",
@@ -425,9 +385,7 @@
       "company_name": "㈜에에피더핀",
       "service_name": "더핀",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -469,44 +427,6 @@
             "advertiser": "대출모집인",
             "is_deleted": false
           }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
         }
       ],
       "news": null,
@@ -520,9 +440,7 @@
       "company_name": "뱅크몰",
       "service_name": "뱅크몰",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -553,44 +471,6 @@
             "days": null,
             "condition": "철회건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-459호",
@@ -1020,9 +900,7 @@
       "company_name": "오버테이크㈜",
       "service_name": "오버테이크",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -1053,44 +931,6 @@
             "days": 30,
             "condition": "완제(철회)건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-459호",
@@ -1482,9 +1322,7 @@
       "company_name": "㈜한국신용데이터",
       "service_name": "캐시노트",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -1515,44 +1353,6 @@
             "days": 30,
             "condition": "완제(철회)건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-459호",
@@ -1810,9 +1610,7 @@
       "company_name": "㈜핀크",
       "service_name": "핀크",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -1843,44 +1641,6 @@
             "days": 30,
             "condition": "완제(철회)건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-459호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "대출모집인",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-459호",
