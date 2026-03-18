@@ -13,10 +13,7 @@
       "company_name": "농협은행㈜",
       "service_name": "NH농협",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -47,63 +44,6 @@
             "days": 30,
             "condition": "완제(철회)건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-458호",
@@ -792,10 +732,7 @@
       "company_name": "㈜신한은행",
       "service_name": "신한은행",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -837,63 +774,6 @@
             "advertiser": "저축은행",
             "is_deleted": false
           }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
         }
       ],
       "news": null,
@@ -907,10 +787,7 @@
       "company_name": "㈜신한은행",
       "service_name": "신한은행",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -952,63 +829,6 @@
             "advertiser": "저축은행",
             "is_deleted": false
           }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
         }
       ],
       "news": null,
@@ -1022,10 +842,7 @@
       "company_name": "신한카드㈜",
       "service_name": "신한카드",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -1056,63 +873,6 @@
             "days": 30,
             "condition": "완제(철회)건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-458호",
@@ -1817,10 +1577,7 @@
       "company_name": "케이뱅크㈜",
       "service_name": "케이뱅크",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -1863,63 +1620,6 @@
             "advertiser": "저축은행",
             "is_deleted": false
           }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
         }
       ],
       "news": null,
@@ -1933,10 +1633,7 @@
       "company_name": "토스뱅크㈜",
       "service_name": "토스뱅크",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -1967,63 +1664,6 @@
             "days": 14,
             "condition": "철회건 제외"
           },
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
           "ad_review": {
             "review_date": "2025-10-31",
             "compliance_number": "제2025-458호",
@@ -2265,10 +1905,7 @@
       "company_name": "하나카드㈜",
       "service_name": "하나카드",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -2310,63 +1947,6 @@
             "advertiser": "저축은행",
             "is_deleted": false
           }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
         }
       ],
       "news": null,
@@ -2380,10 +1960,7 @@
       "company_name": "서민금융진흥원",
       "service_name": "한국이지론",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -2426,63 +2003,6 @@
             "advertiser": "저축은행",
             "is_deleted": false
           }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
         }
       ],
       "news": null,
@@ -2496,10 +2016,7 @@
       "company_name": "㈜현대카드",
       "service_name": "현대카드",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -2541,63 +2058,6 @@
             "advertiser": "저축은행",
             "is_deleted": false
           }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
         }
       ],
       "news": null,
@@ -2611,10 +2071,7 @@
       "company_name": "현대캐피탈㈜",
       "service_name": "현대캐피탈",
       "active_products": [
-        "신용대출",
-        "오토론",
-        "회생상품",
-        "햇살론"
+        "신용대출"
       ],
       "contract": {
         "status": "유효",
@@ -2653,64 +2110,6 @@
             "central_association_number": null,
             "central_association_expiry": "2027-02-18",
             "central_remaining_days": 338,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "오토론",
-          "original_names": [
-            "내차담보플러스OK론",
-            "내차담보플러스"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2026-02-11",
-            "compliance_number": "제2026-064호",
-            "compliance_expiry": "2027-02-10",
-            "compliance_remaining_days": 330,
-            "central_association_number": null,
-            "central_association_expiry": "2027-02-18",
-            "central_remaining_days": 338,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "회생상품",
-          "original_names": [
-            "성실상환OK론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
-            "advertiser": "저축은행",
-            "is_deleted": false
-          }
-        },
-        {
-          "product": "햇살론",
-          "original_names": [
-            "햇살론"
-          ],
-          "commission": null,
-          "settlement_exclusion": null,
-          "ad_review": {
-            "review_date": "2025-10-31",
-            "compliance_number": "제2025-458호",
-            "compliance_expiry": "2026-10-30",
-            "compliance_remaining_days": 227,
-            "central_association_number": null,
-            "central_association_expiry": null,
-            "central_remaining_days": null,
             "advertiser": "저축은행",
             "is_deleted": false
           }

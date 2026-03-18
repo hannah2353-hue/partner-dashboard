@@ -112,6 +112,9 @@ export async function classifyArticles(
 
   const prompt = `당신은 금융 뉴스 분류 전문가입니다. 아래는 "${channelName}" 관련 뉴스 기사 목록입니다.
 
+**중요: 스포츠, 연예, 엔터테인먼트 관련 기사는 반드시 제외해주세요.** 해당 기사의 index는 "excluded": true로 표시해주세요.
+금융/핀테크/제휴 비즈니스와 직접 관련된 기사만 분류해주세요.
+
 각 기사를 다음 5가지 카테고리 중 하나로 분류해주세요:
 - RISK (리스크): 제재, 과태료, 개인정보유출, 소송, 부도, 영업정지
 - REGULATORY (규제): 금융위, 금감원, 규제, 법률개정, 시정명령
@@ -128,7 +131,8 @@ ${JSON.stringify(articleList, null, 2)}
     "index": 0,
     "category": "RISK",
     "summary": "50자 이내 요약",
-    "action_needed": "필요한 조치 설명"
+    "action_needed": "필요한 조치 설명",
+    "excluded": false
   }
 ]`;
 
@@ -169,21 +173,25 @@ ${JSON.stringify(articleList, null, 2)}
       category: NewsCategory;
       summary: string;
       action_needed: string;
+      excluded?: boolean;
     }> = JSON.parse(jsonMatch[0]);
 
-    return articles.map((article, i) => {
-      const cls = classifications.find((c) => c.index === i);
-      const category: NewsCategory = cls?.category ?? "COMPETITION";
-      return {
-        category,
-        title: article.title,
-        date: formatNaverDate(article.pubDate),
-        summary: cls?.summary ?? article.description.slice(0, 50),
-        source: extractSource(article.originallink || article.link),
-        url: article.originallink || article.link,
-        action_needed: cls?.action_needed ?? "모니터링 필요",
-      };
-    });
+    return articles
+      .map((article, i) => {
+        const cls = classifications.find((c) => c.index === i);
+        if (cls?.excluded) return null;
+        const category: NewsCategory = cls?.category ?? "COMPETITION";
+        return {
+          category,
+          title: article.title,
+          date: formatNaverDate(article.pubDate),
+          summary: cls?.summary ?? article.description.slice(0, 50),
+          source: extractSource(article.originallink || article.link),
+          url: article.originallink || article.link,
+          action_needed: cls?.action_needed ?? "모니터링 필요",
+        };
+      })
+      .filter((a): a is ClassifiedArticle => a !== null);
   } catch (error) {
     console.error("Gemini classification error:", error);
     return keywordClassify(articles);
