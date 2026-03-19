@@ -5,7 +5,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Newspaper, RefreshCw, ExternalLink } from "lucide-react";
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import type { ClassifiedArticle } from "@/lib/gemini";
 import type { NewsStats } from "@/lib/news-data";
@@ -46,6 +46,8 @@ export function NewsPageClient({ articles, generatedAt, stats }: Props) {
   const [activeCategory, setActiveCategory] = useState("전체");
   const [isPending, startTransition] = useTransition();
   const [isTriggering, setIsTriggering] = useState(false);
+  const [isAutoRefreshing, setIsAutoRefreshing] = useState(false);
+  const [cacheStatus, setCacheStatus] = useState<string | null>(null);
   const router = useRouter();
 
   const hasData = articles.length > 0 || generatedAt !== null;
@@ -65,8 +67,54 @@ export function NewsPageClient({ articles, generatedAt, stats }: Props) {
       })
     : "-";
 
+  // Calculate cache age for display
+  const cacheAgeMinutes = generatedAt
+    ? Math.floor((Date.now() - new Date(generatedAt).getTime()) / 60000)
+    : null;
+
+  const cacheAgeText = cacheAgeMinutes !== null
+    ? cacheAgeMinutes < 60
+      ? `${cacheAgeMinutes}분 전`
+      : `${Math.floor(cacheAgeMinutes / 60)}시간 ${cacheAgeMinutes % 60}분 전`
+    : null;
+
+  const isCacheStale = cacheAgeMinutes !== null && cacheAgeMinutes >= 60;
+
+  // Auto-refresh on mount if cache is stale (> 1 hour)
+  const checkAndRefresh = useCallback(async () => {
+    setIsAutoRefreshing(true);
+    setCacheStatus("캐시가 1시간 이상 경과하여 자동 갱신 중...");
+    try {
+      const res = await fetch("/api/news/refresh");
+      if (res.ok) {
+        const data = await res.json();
+        if (data.refreshed) {
+          setCacheStatus(null);
+          startTransition(() => {
+            router.refresh();
+          });
+        } else {
+          setCacheStatus(null);
+        }
+      }
+    } catch (error) {
+      console.error("Auto-refresh error:", error);
+      setCacheStatus(null);
+    } finally {
+      setIsAutoRefreshing(false);
+    }
+  }, [router, startTransition]);
+
+  useEffect(() => {
+    if (isCacheStale) {
+      checkAndRefresh();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   async function handleTrigger() {
     setIsTriggering(true);
+    setCacheStatus(null);
     try {
       const res = await fetch("/api/news/trigger", { method: "POST" });
       if (res.ok) {
@@ -92,20 +140,31 @@ export function NewsPageClient({ articles, generatedAt, stats }: Props) {
             뉴스 모니터링
           </h1>
           <p className="text-sm text-muted-custom mt-1">
-            마지막 검색: {formattedTime}
+            마지막 수집: {formattedTime}
+            {cacheAgeText && (
+              <span className={`ml-2 ${isCacheStale ? "text-[#FF8C00]" : "text-emerald-600"}`}>
+                ({cacheAgeText})
+              </span>
+            )}
           </p>
+          {cacheStatus && (
+            <p className="text-xs text-[#FF8C00] mt-0.5 flex items-center gap-1">
+              <RefreshCw size={10} className="animate-spin" />
+              {cacheStatus}
+            </p>
+          )}
         </div>
         <Button
           onClick={handleTrigger}
-          disabled={isTriggering || isPending}
+          disabled={isTriggering || isPending || isAutoRefreshing}
           variant="outline"
           className="gap-2 border-border-custom"
         >
           <RefreshCw
             size={14}
-            className={isTriggering || isPending ? "animate-spin" : ""}
+            className={isTriggering || isPending || isAutoRefreshing ? "animate-spin" : ""}
           />
-          {isTriggering ? "실행 중..." : "수동 실행"}
+          {isTriggering ? "실행 중..." : isAutoRefreshing ? "자동 갱신 중..." : "수동 실행"}
         </Button>
       </div>
 
