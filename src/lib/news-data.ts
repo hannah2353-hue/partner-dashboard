@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+import { adminDb } from "./firebase-admin";
 import type { ClassifiedArticle, NewsCategory } from "./gemini";
 
 export interface ChannelNewsData {
@@ -20,33 +19,34 @@ export interface NewsStats {
   byCategory: Record<string, number>;
 }
 
-const NEWS_CACHE_PATH = path.join(
-  process.cwd(),
-  "src",
-  "data",
-  "news-cache.json"
-);
+const NEWS_CACHE_DOC = "news_cache/latest";
 
-export function getNewsData(): NewsData | null {
+export async function saveNewsData(newsData: NewsData): Promise<void> {
   try {
-    if (!fs.existsSync(NEWS_CACHE_PATH)) {
-      return null;
-    }
-    const raw = fs.readFileSync(NEWS_CACHE_PATH, "utf-8");
-    return JSON.parse(raw) as NewsData;
+    await adminDb.doc(NEWS_CACHE_DOC).set(newsData);
+  } catch (error) {
+    console.error("Failed to save news cache to Firestore:", error);
+  }
+}
+
+export async function getNewsData(): Promise<NewsData | null> {
+  try {
+    const doc = await adminDb.doc(NEWS_CACHE_DOC).get();
+    if (!doc.exists) return null;
+    return doc.data() as NewsData;
   } catch {
     return null;
   }
 }
 
-export function getChannelNews(channelCode: string): ClassifiedArticle[] {
-  const data = getNewsData();
+export async function getChannelNews(channelCode: string): Promise<ClassifiedArticle[]> {
+  const data = await getNewsData();
   if (!data) return [];
   return data.channels[channelCode]?.articles ?? [];
 }
 
-export function getNewsStats(): NewsStats {
-  const data = getNewsData();
+export async function getNewsStats(): Promise<NewsStats> {
+  const data = await getNewsData();
   if (!data) {
     return { total: 0, byCategory: {} };
   }
@@ -64,10 +64,10 @@ export function getNewsStats(): NewsStats {
   return { total, byCategory };
 }
 
-export function getAllArticlesFlat(): Array<
-  ClassifiedArticle & { channel_code: string; service_name: string }
+export async function getAllArticlesFlat(): Promise<
+  Array<ClassifiedArticle & { channel_code: string; service_name: string }>
 > {
-  const data = getNewsData();
+  const data = await getNewsData();
   if (!data) return [];
 
   const result: Array<
@@ -89,10 +89,9 @@ export function getAllArticlesFlat(): Array<
   return result;
 }
 
-export function getNewsCacheGeneratedAt(): string | null {
-  const data = getNewsData();
+export async function getNewsCacheGeneratedAt(): Promise<string | null> {
+  const data = await getNewsData();
   return data?.generated_at ?? null;
 }
 
-export { NEWS_CACHE_PATH };
 export type { NewsCategory };

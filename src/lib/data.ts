@@ -2,9 +2,9 @@ import { adminDb } from "./firebase-admin";
 import { IntegratedData, Channel } from "./types";
 import { getNewsStats } from "./news-data";
 
-function getNewsCountFromCache(): number {
+async function getNewsCountFromCache(): Promise<number> {
   try {
-    const stats = getNewsStats();
+    const stats = await getNewsStats();
     return stats.total;
   } catch {
     return 0;
@@ -103,7 +103,7 @@ export async function getStats() {
     validContracts,
     criticalCount,
     warningCount,
-    newsCount: getNewsCountFromCache(),
+    newsCount: await getNewsCountFromCache(),
     generatedAt: data.generated_at,
   };
 }

@@ -1,8 +1,7 @@
-import fs from "fs";
 import { searchNews } from "./naver-search";
 import { classifyArticles } from "./gemini";
 import type { NewsData, ChannelNewsData } from "./news-data";
-import { NEWS_CACHE_PATH } from "./news-data";
+import { saveNewsData } from "./news-data";
 
 interface ChannelInfo {
   channel_code: string;
@@ -98,12 +97,8 @@ export async function runNewsMonitoring(
     channels: newsChannels,
   };
 
-  // Save to cache file
-  try {
-    fs.writeFileSync(NEWS_CACHE_PATH, JSON.stringify(newsData, null, 2), "utf-8");
-  } catch (error) {
-    console.error("Failed to write news cache:", error);
-  }
+  // Save to Firestore
+  await saveNewsData(newsData);
 
   return newsData;
 }

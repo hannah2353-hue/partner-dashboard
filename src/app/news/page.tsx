@@ -3,10 +3,12 @@ import { NewsPageClient } from "@/components/news-page-client";
 
 export const dynamic = "force-dynamic";
 
-export default function NewsPage() {
-  const articles = getAllArticlesFlat();
-  const generatedAt = getNewsCacheGeneratedAt();
-  const stats = getNewsStats();
+export default async function NewsPage() {
+  const [articles, generatedAt, stats] = await Promise.all([
+    getAllArticlesFlat(),
+    getNewsCacheGeneratedAt(),
+    getNewsStats(),
+  ]);
 
   return (
     <NewsPageClient

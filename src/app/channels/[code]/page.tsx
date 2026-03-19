@@ -20,7 +20,7 @@ export default async function ChannelDetailPage({ params }: PageProps) {
   }
 
   const alertLevel = getAlertLevel(channel);
-  const channelNews = getChannelNews(decodedCode);
+  const channelNews = await getChannelNews(decodedCode);
 
   return (
     <ChannelDetailClient

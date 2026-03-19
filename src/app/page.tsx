@@ -21,7 +21,7 @@ export default async function DashboardPage() {
     });
 
   // Get top news highlights (prioritize RISK and REGULATORY)
-  const allNews = getAllArticlesFlat();
+  const allNews = await getAllArticlesFlat();
   const newsHighlights = allNews.slice(0, 5).map((a) => ({
     category: a.category,
     title: a.title,
