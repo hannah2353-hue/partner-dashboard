@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
     const allChannels = await getChannels();
 
     // Send Slack notification with news + alerts
-    await sendSlackNotification(result, allChannels);
+    await sendSlackNotification(allChannels);
 
     return NextResponse.json({
       success: true,

@@ -22,7 +22,7 @@ export async function POST() {
     const allChannels = await getChannels();
 
     // Send Slack notification with news + alerts
-    await sendSlackNotification(result, allChannels);
+    await sendSlackNotification(allChannels);
 
     return NextResponse.json({
       success: true,

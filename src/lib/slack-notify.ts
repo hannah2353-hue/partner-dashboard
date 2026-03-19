@@ -1,4 +1,4 @@
-import type { NewsData } from "./news-data";
+import { getNewsData } from "./news-data";
 import type { ClassifiedArticle } from "./gemini";
 import type { Channel } from "./types";
 import { getAlertLevel } from "./data";
@@ -90,7 +90,6 @@ function buildAlertItems(channels: Channel[]): AlertItem[] {
 }
 
 export async function sendSlackNotification(
-  newsData: NewsData,
   channels: Channel[]
 ): Promise<void> {
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
@@ -99,7 +98,9 @@ export async function sendSlackNotification(
     return;
   }
 
-  const today = newsData.generated_at.slice(0, 10);
+  // Always read from Firestore cache — same data as dashboard
+  const newsData = await getNewsData();
+  const today = new Date().toISOString().slice(0, 10);
   const blocks: SlackBlock[] = [
     {
       type: "header",
@@ -172,13 +173,15 @@ export async function sendSlackNotification(
 
   // ── Section 2: News Monitoring ──
   const allArticles: Array<ClassifiedArticle & { company_name: string }> = [];
-  for (const ch of Object.values(newsData.channels)) {
-    for (const article of ch.articles) {
-      const exists = allArticles.some(
-        (a) => a.title === article.title && a.company_name === ch.company_name
-      );
-      if (!exists) {
-        allArticles.push({ ...article, company_name: ch.company_name });
+  if (newsData) {
+    for (const ch of Object.values(newsData.channels)) {
+      for (const article of ch.articles) {
+        const exists = allArticles.some(
+          (a) => a.title === article.title && a.company_name === ch.company_name
+        );
+        if (!exists) {
+          allArticles.push({ ...article, company_name: ch.company_name });
+        }
       }
     }
   }
@@ -196,7 +199,7 @@ export async function sendSlackNotification(
 
   const newsSummary = summaryParts.length > 0
     ? summaryParts.join("  |  ")
-    : "새로운 뉴스 없음";
+    : "최근 10일 내 뉴스 없음";
 
   blocks.push(
     { type: "divider" } as SlackBlock,

@@ -43,7 +43,7 @@ export async function GET() {
     const allChannels = await getChannels();
 
     // Send Slack notification
-    await sendSlackNotification(result, allChannels);
+    await sendSlackNotification(allChannels);
 
     return NextResponse.json({
       refreshed: true,
