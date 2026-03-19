@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { runNewsMonitoring } from "@/lib/news-monitor";
+import { sendNewsSlackNotification } from "@/lib/slack-notify";
 import rawData from "@/data/integrated.json";
 
 export const dynamic = "force-dynamic";
@@ -15,6 +16,9 @@ export async function POST() {
     }));
 
     const result = await runNewsMonitoring(channels);
+
+    // Send Slack notification
+    await sendNewsSlackNotification(result);
 
     return NextResponse.json({
       success: true,
