@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { runNewsMonitoring } from "@/lib/news-monitor";
-import { sendNewsSlackNotification } from "@/lib/slack-notify";
+import { sendSlackNotification } from "@/lib/slack-notify";
+import { getChannels } from "@/lib/data";
 import rawData from "@/data/integrated.json";
 
 export const dynamic = "force-dynamic";
@@ -17,8 +18,11 @@ export async function POST() {
 
     const result = await runNewsMonitoring(channels);
 
-    // Send Slack notification
-    await sendNewsSlackNotification(result);
+    // Get full channel data from Firestore for alert info
+    const allChannels = await getChannels();
+
+    // Send Slack notification with news + alerts
+    await sendSlackNotification(result, allChannels);
 
     return NextResponse.json({
       success: true,

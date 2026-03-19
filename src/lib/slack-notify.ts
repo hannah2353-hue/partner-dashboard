@@ -1,11 +1,19 @@
 import type { NewsData } from "./news-data";
 import type { ClassifiedArticle } from "./gemini";
+import type { Channel } from "./types";
+import { getAlertLevel } from "./data";
 
 interface SlackBlock {
   type: string;
   text?: { type: string; text: string; emoji?: boolean };
   elements?: Array<{ type: string; text: string }>;
-  accessory?: { type: string; text: { type: string; text: string; emoji?: boolean }; url: string };
+}
+
+interface AlertItem {
+  serviceName: string;
+  channelType: string;
+  level: "CRITICAL" | "WARNING";
+  messages: string[];
 }
 
 function getCategoryEmoji(category: string): string {
@@ -30,18 +38,142 @@ function getCategoryLabel(category: string): string {
   }
 }
 
-export async function sendNewsSlackNotification(newsData: NewsData): Promise<void> {
+function buildAlertItems(channels: Channel[]): AlertItem[] {
+  const items: AlertItem[] = [];
+
+  for (const ch of channels) {
+    const level = getAlertLevel(ch);
+    if (!level) continue;
+
+    const messages: string[] = [];
+
+    // Contract alerts
+    if (ch.contract.remaining_days <= 0) {
+      messages.push(`계약 만료됨`);
+    } else if (ch.contract.remaining_days <= 30) {
+      messages.push(`계약 만료 ${ch.contract.remaining_days}일 전`);
+    } else if (ch.contract.remaining_days <= 90) {
+      messages.push(`계약 만료 ${ch.contract.remaining_days}일 전`);
+    }
+
+    // Ad review alerts
+    for (const p of ch.products) {
+      if (p.ad_review && p.ad_review.compliance_remaining_days !== null) {
+        if (p.ad_review.compliance_remaining_days <= 0) {
+          messages.push(`${p.product} 광고심의 만료됨`);
+        } else if (p.ad_review.compliance_remaining_days <= 30) {
+          messages.push(`${p.product} 광고심의 만료 ${p.ad_review.compliance_remaining_days}일 전`);
+        } else if (p.ad_review.compliance_remaining_days <= 90) {
+          messages.push(`${p.product} 광고심의 만료 ${p.ad_review.compliance_remaining_days}일 전`);
+        }
+      }
+    }
+
+    if (messages.length > 0) {
+      items.push({
+        serviceName: ch.service_name,
+        channelType: ch.channel_type,
+        level,
+        messages,
+      });
+    }
+  }
+
+  // CRITICAL first, then WARNING
+  items.sort((a, b) => {
+    if (a.level === "CRITICAL" && b.level !== "CRITICAL") return -1;
+    if (a.level !== "CRITICAL" && b.level === "CRITICAL") return 1;
+    return 0;
+  });
+
+  return items;
+}
+
+export async function sendSlackNotification(
+  newsData: NewsData,
+  channels: Channel[]
+): Promise<void> {
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
   if (!webhookUrl) {
     console.warn("SLACK_WEBHOOK_URL not configured, skipping notification");
     return;
   }
 
-  // Collect all articles with channel info
+  const today = newsData.generated_at.slice(0, 10);
+  const blocks: SlackBlock[] = [
+    {
+      type: "header",
+      text: { type: "plain_text", text: "📋 제휴채널 일일 리포트", emoji: true },
+    },
+    {
+      type: "section",
+      text: { type: "mrkdwn", text: `*일자:* ${today}  |  *전체 채널:* ${channels.length}개` },
+    },
+  ];
+
+  // ── Section 1: Critical/Warning Alerts ──
+  const alertItems = buildAlertItems(channels);
+  const criticalItems = alertItems.filter((a) => a.level === "CRITICAL");
+  const warningItems = alertItems.filter((a) => a.level === "WARNING");
+
+  blocks.push(
+    { type: "divider" } as SlackBlock,
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*🚨 계약·심의 경고*  —  CRITICAL ${criticalItems.length}건  |  WARNING ${warningItems.length}건`,
+      },
+    }
+  );
+
+  if (criticalItems.length > 0) {
+    for (const item of criticalItems.slice(0, 8)) {
+      const msgs = item.messages.map((m) => `  • ${m}`).join("\n");
+      blocks.push({
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: `🔴 *${item.serviceName}* (${item.channelType})\n${msgs}`,
+        },
+      });
+    }
+    if (criticalItems.length > 8) {
+      blocks.push({
+        type: "context",
+        elements: [{ type: "mrkdwn", text: `외 CRITICAL ${criticalItems.length - 8}건 더...` }],
+      });
+    }
+  }
+
+  if (warningItems.length > 0) {
+    const warningLines = warningItems.slice(0, 5).map((item) => {
+      const msg = item.messages[0];
+      return `🟡 *${item.serviceName}* — ${msg}`;
+    });
+    blocks.push({
+      type: "section",
+      text: { type: "mrkdwn", text: warningLines.join("\n") },
+    });
+    if (warningItems.length > 5) {
+      blocks.push({
+        type: "context",
+        elements: [{ type: "mrkdwn", text: `외 WARNING ${warningItems.length - 5}건 더...` }],
+      });
+    }
+  }
+
+  if (criticalItems.length === 0 && warningItems.length === 0) {
+    blocks.push({
+      type: "section",
+      text: { type: "mrkdwn", text: "✅ 경고 없음 — 모든 계약·심의 정상" },
+    });
+  }
+
+  // ── Section 2: News Monitoring ──
   const allArticles: Array<ClassifiedArticle & { company_name: string }> = [];
   for (const ch of Object.values(newsData.channels)) {
     for (const article of ch.articles) {
-      // Avoid duplicates (same company can have multiple channel codes)
       const exists = allArticles.some(
         (a) => a.title === article.title && a.company_name === ch.company_name
       );
@@ -51,7 +183,6 @@ export async function sendNewsSlackNotification(newsData: NewsData): Promise<voi
     }
   }
 
-  // Count by category
   const categoryCounts: Record<string, number> = {
     RISK: 0, REGULATORY: 0, MANAGEMENT: 0, GROWTH: 0, COMPETITION: 0,
   };
@@ -59,42 +190,32 @@ export async function sendNewsSlackNotification(newsData: NewsData): Promise<voi
     categoryCounts[a.category] = (categoryCounts[a.category] || 0) + 1;
   }
 
-  // Build summary line
   const summaryParts = Object.entries(categoryCounts)
     .filter(([, count]) => count > 0)
     .map(([cat, count]) => `${getCategoryEmoji(cat)} ${getCategoryLabel(cat)} ${count}건`);
 
-  const summaryText = summaryParts.length > 0
+  const newsSummary = summaryParts.length > 0
     ? summaryParts.join("  |  ")
-    : "새로운 뉴스가 없습니다";
+    : "새로운 뉴스 없음";
 
-  // Build blocks
-  const blocks: SlackBlock[] = [
-    {
-      type: "header",
-      text: { type: "plain_text", text: "📰 제휴채널 뉴스 모니터링", emoji: true },
-    },
+  blocks.push(
+    { type: "divider" } as SlackBlock,
     {
       type: "section",
-      text: { type: "mrkdwn", text: `*일자:* ${newsData.generated_at.slice(0, 10)}  |  *총 ${allArticles.length}건*\n${summaryText}` },
-    },
-  ];
+      text: {
+        type: "mrkdwn",
+        text: `*📰 뉴스 모니터링*  —  총 ${allArticles.length}건\n${newsSummary}`,
+      },
+    }
+  );
 
-  // RISK & REGULATORY articles first (urgent)
+  // Urgent news (RISK + REGULATORY)
   const urgentArticles = allArticles.filter(
     (a) => a.category === "RISK" || a.category === "REGULATORY"
   );
 
   if (urgentArticles.length > 0) {
-    blocks.push(
-      { type: "divider" } as SlackBlock,
-      {
-        type: "section",
-        text: { type: "mrkdwn", text: "*⚠️ 주의 필요 기사*" },
-      }
-    );
-
-    for (const article of urgentArticles.slice(0, 10)) {
+    for (const article of urgentArticles.slice(0, 5)) {
       blocks.push({
         type: "section",
         text: {
@@ -103,53 +224,41 @@ export async function sendNewsSlackNotification(newsData: NewsData): Promise<voi
         },
       });
     }
-
-    if (urgentArticles.length > 10) {
+    if (urgentArticles.length > 5) {
       blocks.push({
         type: "context",
-        elements: [{ type: "mrkdwn", text: `외 ${urgentArticles.length - 10}건 더...` }],
+        elements: [{ type: "mrkdwn", text: `외 ${urgentArticles.length - 5}건 더...` }],
       });
     }
   }
 
-  // Other articles summary
+  // Other news
   const otherArticles = allArticles.filter(
     (a) => a.category !== "RISK" && a.category !== "REGULATORY"
   );
 
   if (otherArticles.length > 0) {
-    blocks.push(
-      { type: "divider" } as SlackBlock,
-      {
-        type: "section",
-        text: { type: "mrkdwn", text: "*📌 기타 동향*" },
-      }
+    const otherLines = otherArticles.slice(0, 3).map(
+      (a) => `${getCategoryEmoji(a.category)} *[${a.company_name}]* <${a.url}|${a.title}>`
     );
-
-    for (const article of otherArticles.slice(0, 5)) {
-      blocks.push({
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text: `${getCategoryEmoji(article.category)} *[${article.company_name}]* <${article.url}|${article.title}>\n${article.summary}`,
-        },
-      });
-    }
-
-    if (otherArticles.length > 5) {
+    blocks.push({
+      type: "section",
+      text: { type: "mrkdwn", text: otherLines.join("\n") },
+    });
+    if (otherArticles.length > 3) {
       blocks.push({
         type: "context",
-        elements: [{ type: "mrkdwn", text: `외 ${otherArticles.length - 5}건 더...` }],
+        elements: [{ type: "mrkdwn", text: `외 ${otherArticles.length - 3}건 더...` }],
       });
     }
   }
 
-  // Footer
+  // ── Footer ──
   blocks.push(
     { type: "divider" } as SlackBlock,
     {
       type: "context",
-      elements: [{ type: "mrkdwn", text: `🔗 <${process.env.NEXT_PUBLIC_BASE_URL || "https://your-app.vercel.app"}/news|대시보드에서 전체 보기>` }],
+      elements: [{ type: "mrkdwn", text: `🔗 <${process.env.NEXT_PUBLIC_BASE_URL || "https://your-app.vercel.app"}|대시보드에서 전체 보기>` }],
     }
   );
 
