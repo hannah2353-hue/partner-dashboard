@@ -6,10 +6,15 @@ import fs from "fs";
 function getAdminApp(): App {
   if (getApps().length > 0) return getApps()[0];
 
-  // Vercel: read service account key from env var
+  // Vercel: read service account key from env var (supports Base64 or raw JSON)
   const envKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
   if (envKey) {
-    const serviceAccount = JSON.parse(envKey);
+    let json = envKey;
+    // If it doesn't start with '{', assume Base64 encoded
+    if (!envKey.trimStart().startsWith("{")) {
+      json = Buffer.from(envKey, "base64").toString("utf-8");
+    }
+    const serviceAccount = JSON.parse(json);
     return initializeApp({ credential: cert(serviceAccount) });
   }
 
