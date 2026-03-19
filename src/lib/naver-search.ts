@@ -92,7 +92,7 @@ export async function searchNews(query: string): Promise<NaverNewsItem[]> {
         title: stripHtml(item.title),
         description: stripHtml(item.description),
       }))
-      .filter((item) => isWithinDays(item.pubDate, 7))
+      .filter((item) => isWithinDays(item.pubDate, 10))
       .filter((item) => !isIrrelevantArticle(item.title, item.description));
   } catch (error) {
     console.error("Naver search error:", error);
