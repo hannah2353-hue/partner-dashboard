@@ -64,7 +64,7 @@ export async function searchNews(query: string): Promise<NaverNewsItem[]> {
 
   const params = new URLSearchParams({
     query,
-    display: "10",
+    display: "30",
     sort: "date",
   });
 
